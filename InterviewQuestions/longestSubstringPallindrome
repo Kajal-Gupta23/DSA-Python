@@ -1,0 +1,22 @@
+str =  "abccbac"
+res = ""
+res_length = 0
+
+for i in range(len(str)):
+    r, l = i, i
+    while l >= 0 and r < len(str) and str[l] == str[r]:
+        if (r - l + 1) > res_length:
+            res = str[l:r + 1]
+            res_length = r - l + 1
+
+        l -= 1
+        r += 1
+    r, l = i+1, i
+    while l >= 0 and r < len(str) and str[l] == str[r]:
+        if (r - l + 1) > res_length:
+            res = str[l:r + 1]
+            res_length = r - l + 1
+
+        l -= 1
+        r += 1
+print(res)
