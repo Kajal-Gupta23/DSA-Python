@@ -1,0 +1,13 @@
+arr = [2, 16, 5, 1, 8, 7]
+s = []
+nge = [-1]*len(arr)
+
+for i in range(2*len(arr)-1, -1, -1):
+    while s and s[-1] <= arr[i%len(arr)]:
+        s.pop()
+
+    if i < len(arr):
+        if s:
+            nge[i] = s[-1]
+    s.append(arr[i% len(arr)])
+print(nge)
