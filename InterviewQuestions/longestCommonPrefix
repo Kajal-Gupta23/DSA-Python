@@ -1,0 +1,24 @@
+str = ["hiiiii","hiiiiiiiiooo","hiiio","hiiii"]
+
+pre = str[0]
+for i in str:
+    while not i.startswith(pre):
+        pre = pre[:-1]
+
+print(pre)
+
+#other way
+str_list = ["sun", "sunday","sundae"]
+str_list.sort()
+
+result = ""
+first_str = str_list[0]
+last_str = str_list[-1]
+
+for i in range(len(first_str)):
+    if first_str[i] == last_str[i]:
+        result += first_str[i]
+    else:
+        break
+
+print(result)
