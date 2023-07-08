@@ -1,0 +1,42 @@
+class Stack:
+
+    def __init__(self):
+        self.stack = []
+
+    def push(self, element):
+        self.stack.append(element)
+
+    def pop(self):
+        if self.stack:
+            self.stack.pop()
+        else:
+            print("Empty stack")
+
+    def isEmpty(self):
+        if not self.stack:
+            return True
+        else:
+            return False
+
+    def display(self):
+        print(self.stack)
+
+    def get_top(self):
+        return self.stack[-1]
+
+
+obj = Stack()
+obj.push(10)
+obj.push(20)
+obj.push(30)
+obj.display()
+
+obj.pop()
+obj.pop()
+obj.pop()
+obj.display()
+
+# print(obj.get_top())
+
+print(obj.isEmpty())
+obj.pop()
