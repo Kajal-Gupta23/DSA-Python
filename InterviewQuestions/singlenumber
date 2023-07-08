@@ -1,0 +1,6 @@
+arr = [1,1,2,3,2]
+arr.sort()
+for i in arr:
+    arr.remove(i)
+    if i not in arr:
+        print(i)
