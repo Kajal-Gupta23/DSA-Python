@@ -1,0 +1,20 @@
+def addMinChar( str1):
+    n = len(str1)
+    start = 0
+    end = n - 1
+    res = 0
+    while start < end:  # While the pointers have not met in the middle of the string
+        if str1[start] == str1[end]:  # If the characters at the start and end pointers are equal
+            start += 1  # Move the start pointer to the right
+            end -= 1  # Move the end pointer to the left
+        else:
+
+            res += 1  # Increment the count of characters to be added
+            start = 0  # Reset the start pointer to the beginning of the string
+            end = n - res - 1  # Reset the end pointer to the end of the string with a reduced number of characters
+    return res  # Return the count of characters to be added
+
+
+if __name__ == "__main__":
+    string = "AAECAAA"
+    print(addMinChar(string))
