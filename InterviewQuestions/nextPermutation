@@ -1,0 +1,24 @@
+def next_permutation(arr, n):
+    ind = -1
+    for i in range((n - 2), -1, -1):
+        if arr[i] < arr[i + 1]:
+            ind = i
+            break
+
+    if ind == -1:
+        arr = arr[::-1]
+        return arr
+
+    for i in range(n - 1, ind, -1):
+        if arr[i] > arr[ind]:
+            arr[i], arr[ind] = arr[ind], arr[i]
+
+    arr[ind + 1:] = reversed(arr[ind + 1:])
+
+    return arr
+
+
+arr = [3, 2, 1]
+n = len(arr)
+
+print(next_permutation(arr, n))
