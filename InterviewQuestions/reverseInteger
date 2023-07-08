@@ -1,0 +1,22 @@
+def reverse(x: int) -> int:
+    m = str(x)
+    INT_MIN = -2 ** 31
+    INT_MAX = 2 ** 31 - 1
+    if "-" in m:
+        s = m.split("-")
+        result = s[1][::-1]
+        ans = int(result)
+        sol = int(f'-{ans}')
+        if sol < INT_MIN or sol > INT_MAX:
+            return 0  # Return 0 for out-of-range values
+        else:
+            return sol
+    else:
+        sol = int(m[::-1])
+        if sol < INT_MIN or sol > INT_MAX:
+            return 0  # Return 0 for out-of-range values
+        else:
+            return sol
+
+
+print(reverse(128888888))
