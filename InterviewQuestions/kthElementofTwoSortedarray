@@ -1,0 +1,24 @@
+m = 5
+n = 4
+array1 = [2, 3, 6, 7, 9]
+array2 = [1, 4, 8, 10]
+k = 3
+
+i = 0
+j = 0
+counter = 0
+while(i<m and j<n):
+    if array1[i]<=array2[j]:
+        i+=1
+    else:
+        j+=1
+    counter += 1
+    if counter == k:
+        if i < m:
+            print(array1[i - 1])
+        else:
+            print(array2[j - 1])
+        break
+
+
+
