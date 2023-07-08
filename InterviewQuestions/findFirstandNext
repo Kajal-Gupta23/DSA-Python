@@ -1,0 +1,11 @@
+def searchRange(nums, target):
+    result = []
+    if target not in nums:
+        return [-1, -1]
+    for i in range(len(nums)):
+        if nums[i] == target:
+            result.append(i)
+    return list((result[0], result[-1]))
+
+
+print(searchRange([1, 2, 3, 3,1], 1))
