@@ -1,0 +1,16 @@
+st = []
+s = "good vibes"
+temp = ""
+n = len(s)
+result = ""
+for i in range(0, n):
+    if s[i] != " ":
+        temp += s[i]
+
+    else:
+        st.append(temp)
+        temp = ""
+st.append(temp)
+while len(st) != 0:
+    result += st.pop() + " "
+print(result)
