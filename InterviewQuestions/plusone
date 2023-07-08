@@ -1,0 +1,10 @@
+arr = [1, 2, 9, 9]
+st = ""
+for i in arr:
+    st += str(i)
+sum = int(st) + 1
+result = []
+
+for i in str(sum):
+    result.append(int(i))
+print(result)
