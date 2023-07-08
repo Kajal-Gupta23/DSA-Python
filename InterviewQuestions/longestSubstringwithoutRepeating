@@ -1,0 +1,36 @@
+#length of longest substring without repeating
+
+a = "mikazukata"
+
+l = 0
+r = 0
+max_l = -1
+char_set = set()
+while (r < len(a)):
+    if a[r] not in char_set:
+        char_set.add(a[r])
+        max_l = max(r - l + 1, max_l)
+        r += 1
+    else:
+        char_set.remove(a[l])
+        l += 1
+
+print(max_l)
+
+# print string
+def longest_substring(s):
+    max_substring = ""
+    for i in range(len(s)):
+        substring = ""
+        for j in range(i, len(s)):
+            if s[j] not in substring:
+                substring += s[j]
+            else:
+                break
+        if len(substring) > len(max_substring):
+            max_substring = substring
+    return max_substring
+
+
+s = "mikazukata"
+print(longest_substring(s))
